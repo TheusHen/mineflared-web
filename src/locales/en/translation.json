@@ -159,5 +159,76 @@
   },
   "common": {
     "toggleTheme": "Toggle theme"
+  },
+  "home": {
+    "hero": {
+      "badge": "Minecraft P2P Hosting",
+      "installCli": "Install CLI",
+      "viewDocs": "View Documentation"
+    },
+    "features": {
+      "title": "Why choose Mineflared?",
+      "subtitle": "A complete solution to host Minecraft servers hassle-free",
+      "instantSetup": {
+        "title": "Instant Setup",
+        "description": "Set up your server in seconds with just a few terminal commands"
+      },
+      "ddosProtection": {
+        "title": "DDoS Protection",
+        "description": "Your server protected by Cloudflare's global network against attacks"
+      },
+      "dynamicDns": {
+        "title": "Dynamic DNS",
+        "description": "No need for a static IP, your server always accessible with a custom domain"
+      }
+    },
+    "tech": {
+      "title": "Tech Stack",
+      "subtitle": "Built with the best technologies for performance and reliability",
+      "cliBackend": "CLI & Backend",
+      "infrastructure": "Infrastructure",
+      "frontend": "Frontend",
+      "golang": "Golang",
+      "golangDesc": "Ultra-fast and efficient CLI",
+      "oauth2": "OAuth2",
+      "oauth2Desc": "Secure GitHub/Google authentication",
+      "jwt": "JWT",
+      "jwtDesc": "Secure tokens for sessions",
+      "cloudflare": "Cloudflare",
+      "cloudflareDesc": "Dynamic DNS and DDoS protection",
+      "mongodb": "MongoDB Atlas",
+      "mongodbDesc": "Scalable database",
+      "vercel": "Vercel",
+      "vercelDesc": "Global and fast hosting",
+      "nextjs": "Next.js",
+      "nextjsDesc": "Modern React framework",
+      "typescript": "TypeScript",
+      "typescriptDesc": "Safe static typing",
+      "tailwind": "Tailwind CSS",
+      "tailwindDesc": "Responsive design system",
+      "backend": "Backend",
+      "auth": "Auth",
+      "security": "Security",
+      "database": "Database",
+      "hosting": "Hosting",
+      "react": "React",
+      "language": "Language",
+      "css": "CSS"
+    },
+    "cta": {
+      "title": "Ready to get started?",
+      "subtitle": "Install the Mineflared CLI and have your Minecraft server running in minutes",
+      "powershell": "PowerShell (Windows)",
+      "npm": "npm (Cross-platform)",
+      "getStarted": "Get Started",
+      "viewDocs": "View Documentation"
+    },
+    "footer": {
+      "documentation": "Documentation",
+      "privacy": "Privacy",
+      "github": "GitHub",
+      "support": "Support",
+      "copyright": "© 2025 Mineflared. All rights reserved."
+    }
   }
 }
