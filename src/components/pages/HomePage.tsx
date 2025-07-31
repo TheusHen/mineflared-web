@@ -201,8 +201,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 <div className="w-16 h-16 bg-black dark:bg-white/10 rounded-lg flex items-center justify-center mx-auto mb-4">
                   <FileCode className="h-8 w-8 text-white dark:text-black" />
                 </div>
-                <h4 className="mb-2">{t('home.tech.nextjs')}</h4>
-                <p className="text-sm text-muted-foreground mb-3">{t('home.tech.nextjsDesc')}</p>
+                <h4 className="mb-2">{t('home.tech.vite')}</h4>
+                <p className="text-sm text-muted-foreground mb-3">{t('home.tech.viteDesc')}</p>
                 <Badge variant="outline">{t('home.tech.react')}</Badge>
               </CardContent>
             </Card>
@@ -290,4 +290,3 @@ export function HomePage({ onNavigate }: HomePageProps) {
     </>
   );
 }
-
