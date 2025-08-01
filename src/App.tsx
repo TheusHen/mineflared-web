@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from "./components/ui/button";
 import {
     Server,
@@ -11,16 +11,36 @@ import { HomePage } from './components/pages/HomePage';
 import { DocsPage } from './components/pages/DocsPage';
 import { InstallPage } from './components/pages/InstallPage';
 import { PrivacyPage } from './components/pages/PrivacyPage';
+import { StatusPage } from './pages/status';
 import { useTranslation } from 'react-i18next';
 import './App.css';
 
-export type Page = 'home' | 'docs' | 'install' | 'privacy';
+export type Page = 'home' | 'docs' | 'install' | 'privacy' | 'status';
+
+function getPageFromPath(pathname: string): Page {
+    if (pathname === '/docs') return 'docs';
+    if (pathname === '/install') return 'install';
+    if (pathname === '/privacy') return 'privacy';
+    if (pathname === '/status') return 'status';
+    return 'home';
+}
 
 function AppContent() {
-    const [currentPage, setCurrentPage] = useState<Page>('home');
+    const [currentPage, setCurrentPage] = useState<Page>(() => getPageFromPath(window.location.pathname));
     const { t, i18n } = useTranslation();
 
+    useEffect(() => {
+        const onPopState = () => {
+            setCurrentPage(getPageFromPath(window.location.pathname));
+        };
+        window.addEventListener('popstate', onPopState);
+        return () => window.removeEventListener('popstate', onPopState);
+    }, []);
+
     const navigateTo = (page: Page) => {
+        let path = '/';
+        if (page !== 'home') path = `/${page}`;
+        window.history.pushState({}, '', path + window.location.search);
         setCurrentPage(page);
     };
 
@@ -82,6 +102,12 @@ function AppContent() {
                         >
                             {t('nav.privacy')}
                         </button>
+                        <button
+                            onClick={() => navigateTo('status')}
+                            className="text-sm hover:text-primary transition-colors"
+                        >
+                            {t('nav.status', 'Status')}
+                        </button>
                     </nav>
                     <div className="flex items-center space-x-2 absolute right-0 top-1/2 -translate-y-1/2">
                         <div className="flex items-center mr-2">
@@ -114,6 +140,7 @@ function AppContent() {
             {currentPage === 'docs' && <DocsPage onNavigate={navigateTo} />}
             {currentPage === 'install' && <InstallPage onNavigate={navigateTo} />}
             {currentPage === 'privacy' && <PrivacyPage onNavigate={navigateTo} />}
+            {currentPage === 'status' && <StatusPage />}
 
             {/* Footer - Only show on home page */}
             {currentPage === 'home' && (

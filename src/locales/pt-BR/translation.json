@@ -147,7 +147,7 @@
     "backend_dns": "b) Atualizações de DNS",
     "backend_dns_desc": "Ao criar ou atualizar o subdomínio, o backend envia o <1>username</1> e o <3>ip</3> para a API do Cloudflare, criando/atualizando um registro do tipo A do subdomínio <5>&lt;username&gt;.&lt;domain&gt;</5>. Nenhum dado sensível é exposto publicamente nesse processo, exceto o nome de usuário e IP atrelados ao subdomínio.",
     "backend_delete": "c) Exclusão de Dados",
-    "backend_delete_desc": "Quando o usuário solicita exclusão (<1>/delete</1>), o backend remove:",
+    "backend_delete_desc": "Quando o usuário solicita exclusão (<1>mineflared delete</1>), o backend remove:",
     "backend_delete_db": "Todos os dados do usuário em <1>users</1> (MongoDB)",
     "backend_delete_cf": "O subdomínio correspondente no Cloudflare",
     "no_data_title": "3. Dados NÃO Coletados",
@@ -208,6 +208,8 @@
     "cmd_list_desc": "Lista todos os seus servidores",
     "cmd_start": "mineflared start <name>",
     "cmd_start_desc": "Inicia o servidor especificado",
+    "cmd_delete": "mineflared delete",
+    "cmd_delete_desc": "Exclui todos os seus dados e remove seu subdomínio do Cloudflare. Esta ação é irreversível.",
     "config_title": "Configuração",
     "server_config": "Configuração do Servidor",
     "server_config_desc": "Abre uma interface web para editar o arquivo <1>server.properties</1>:",
@@ -227,6 +229,20 @@
     "feature_monitor_desc": "Logs em tempo real e estatísticas de performance",
     "feature_restart": "🔄 Auto-restart",
     "feature_restart_desc": "Reinicialização automática em caso de crash"
+  },
+  "status": {
+    "title": "Status do Servidor",
+    "subtitle": "Verifique se seu servidor Minecraft está online e com DNS configurado corretamente.",
+    "input_placeholder": "Digite seu usuário...",
+    "search": "Checar Status",
+    "loading": "Carregando status...",
+    "online": "Online",
+    "offline": "Offline",
+    "server_status": "Status do Servidor",
+    "success": "Servidor online!",
+    "not_online": "Servidor offline ou DNS não configurado.",
+    "retry": "Tentar Novamente",
+    "username_required": "O parâmetro 'username' é obrigatório na URL."
   },
   "common": {
     "toggleTheme": "Alternar tema"

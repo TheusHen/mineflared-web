@@ -11,6 +11,20 @@
     "getStarted": "Get Started",
     "backToHome": "Back to Home"
   },
+  "status": {
+    "title": "Server Status",
+    "subtitle": "Check if your Minecraft server is online and with DNS configured correctly.",
+    "input_placeholder": "Enter your username...",
+    "search": "Check Status",
+    "loading": "Loading status...",
+    "online": "Online",
+    "offline": "Offline",
+    "server_status": "Server Status",
+    "success": "Server is online!",
+    "not_online": "Server is offline or DNS not configured.",
+    "retry": "Try Again",
+    "username_required": "The 'username' parameter is required in the URL."
+  },
   "install": {
     "back_home": "Back to Home",
     "title": "Installation",
@@ -76,7 +90,7 @@
     "backend_dns": "b) DNS Updates",
     "backend_dns_desc": "When creating or updating the subdomain, the backend sends <1>username</1> and <3>ip</3> to the Cloudflare API, creating/updating an A record for the subdomain <5>&lt;username&gt;.&lt;domain&gt;</5>. No sensitive data is exposed publicly in this process, except the username and IP attached to the subdomain.",
     "backend_delete": "c) Data Deletion",
-    "backend_delete_desc": "When the user requests deletion (<1>/delete</1>), the backend removes:",
+    "backend_delete_desc": "When the user requests deletion (<1>mineflared delete</1>), the backend removes:",
     "backend_delete_db": "All user data in <1>users</1> (MongoDB)",
     "backend_delete_cf": "The corresponding subdomain in Cloudflare",
     "no_data_title": "3. Data NOT Collected",
@@ -137,6 +151,8 @@
     "cmd_list_desc": "Lists all your servers",
     "cmd_start": "mineflared start <name>",
     "cmd_start_desc": "Starts the specified server",
+    "cmd_delete": "mineflared delete",
+    "cmd_delete_desc": "Deletes all your data and removes your subdomain from Cloudflare. This action is irreversible.",
     "config_title": "Configuration",
     "server_config": "Server Configuration",
     "server_config_desc": "Opens a web interface to edit <1>server.properties</1>:",

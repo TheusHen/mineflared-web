@@ -171,6 +171,15 @@ export function DocsPage({ onNavigate }: DocsPageProps) {
                       {t('docs.cmd_start_desc')}
                     </p>
                   </div>
+                  <div className="border rounded-lg p-4">
+                    <div className="flex items-center justify-between mb-2">
+                      <code className="font-mono">{t('docs.cmd_delete')}</code>
+                      <Badge variant="outline">DELETE</Badge>
+                    </div>
+                    <p className="text-sm text-muted-foreground">
+                      {t('docs.cmd_delete_desc')}
+                    </p>
+                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -267,3 +276,4 @@ export function DocsPage({ onNavigate }: DocsPageProps) {
       </div>
   );
 }
+
