@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="https://mineflared.theushen.me/og-banner.png" alt="Mineflared Banner" width="600"/>
-</p>
-
 <h1 align="center">Mineflared Website</h1>
 
 <p align="center">
