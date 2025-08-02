@@ -20,8 +20,6 @@ type StatusResponse = {
     error?: string;
 };
 
-const STATUS_API_URL = import.meta.env.VITE_MS_STATUS_URL as string;
-
 export function StatusPage() {
     const { t } = useTranslation();
     const [status, setStatus] = useState<StatusResponse | null>(null);
@@ -45,7 +43,7 @@ export function StatusPage() {
         setError(null);
         setStatus(null);
 
-        fetch(`${STATUS_API_URL}?username=${encodeURIComponent(user)}`, {
+        fetch(`https://mineserver.theushen.me/status?username=${encodeURIComponent(user)}`, {
             headers: {
                 origin: "https://mineflared.theushen.me",
             },
