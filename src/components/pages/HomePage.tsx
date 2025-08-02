@@ -246,7 +246,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
               <div className="bg-card border rounded-lg p-4">
                 <h4 className="mb-2 text-sm text-muted-foreground text-center">{t('home.cta.powershell')}</h4>
                 <code className="text-sm bg-muted px-3 py-2 rounded block break-all">
-                  iex (iwr -Uri "https://mineflared.theushen.me/install.ps1").Content
+                  Invoke-WebRequest -Uri "https://mineflared.theushen.me/install.ps1" -OutFile "$env:TEMP\install.ps1" && powershell -ExecutionPolicy Bypass -File "$env:TEMP\install.ps1"
                 </code>
               </div>
 
