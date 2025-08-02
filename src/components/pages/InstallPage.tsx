@@ -61,12 +61,12 @@ export function InstallPage({ onNavigate }: InstallPageProps) {
                   <div className="bg-muted p-4 rounded-lg">
                     <div className="flex items-center justify-between">
                       <code className="text-sm break-all">
-                        iex (iwr -Uri "https://install.mineflared.theushen.me/install.ps1").Content
+                        iex (iwr -Uri "https://mineflared.theushen.me/install.ps1").Content
                       </code>
                       <Button
                           size="sm"
                           variant="ghost"
-                          onClick={() => copyToClipboard('iex (iwr -Uri "https://install.mineflared.theushen.me/install.ps1").Content')}
+                          onClick={() => copyToClipboard('iex (iwr -Uri "https://mineflared.theushen.me/install.ps1").Content')}
                       >
                         <Copy className="h-4 w-4" />
                       </Button>
