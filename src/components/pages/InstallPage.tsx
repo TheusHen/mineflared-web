@@ -61,12 +61,13 @@ export function InstallPage({ onNavigate }: InstallPageProps) {
                   <div className="bg-muted p-4 rounded-lg">
                     <div className="flex items-center justify-between">
                       <code className="text-sm break-all">
-                        iex (iwr -Uri "https://mineflared.theushen.me/install.ps1").Content
+                        Invoke-WebRequest -Uri "https://mineflared.theushen.me/install.ps1" -OutFile "$env:TEMP\install.ps1" && powershell -ExecutionPolicy Bypass -File "$env:TEMP\install.ps1"
                       </code>
                       <Button
                           size="sm"
                           variant="ghost"
-                          onClick={() => copyToClipboard('iex (iwr -Uri "https://mineflared.theushen.me/install.ps1").Content')}
+                          onClick={() => copyToClipboard('Invoke-WebRequest -Uri "https://mineflared.theushen.me/install.ps1" -OutFile "$env:TEMP\install.ps1" && powershell -ExecutionPolicy Bypass -File "$env:TEMP\install.ps1"
+')}
                       >
                         <Copy className="h-4 w-4" />
                       </Button>
