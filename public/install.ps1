@@ -12,31 +12,11 @@ if (-not $asset) {
     exit 1
 }
 
-$spinner = @('|','/','-','\')
-$spinnerIndex = 0
-
-$webClient = New-Object System.Net.WebClient
-
-$webClient.DownloadProgressChanged += {
-    param($sender, $e)
-    $percent = $e.ProgressPercentage
-    $spinnerChar = $spinner[$spinnerIndex % $spinner.Length]
-    Write-Host -NoNewline ("`rDownloading $exeName... $spinnerChar $percent%   ")
-    $spinnerIndex++
-}
-
-$downloadComplete = $false
-$webClient.DownloadFileCompleted += {
-    $downloadComplete = $true
-}
-
 $uri = $asset.browser_download_url
 
-$webClient.DownloadFileAsync([Uri]$uri, $tempPath)
+Write-Host "Downloading $exeName..."
+$webClient = New-Object System.Net.WebClient
+$webClient.DownloadFile($uri, $tempPath)
 
-while (-not $downloadComplete) {
-    Start-Sleep -Milliseconds 100
-}
-
-Write-Host "`nRunning $exeName..."
+Write-Host "Running $exeName..."
 Start-Process -FilePath $tempPath -Wait
